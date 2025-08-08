@@ -11,6 +11,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --dark: #1a1a1a;
+  --medium: #474747;
+  --light: #aaaaaa;
+  --white: #c9cde6;
 }
 
 * {
@@ -24,18 +29,9 @@ img {
 body {
   margin: 0;
   font-family: "Open sans", "noto sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
   width: 100%;
   min-height: 100vh;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
 }
 
 button {
@@ -45,26 +41,58 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--dark);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+input {
+  border-radius: 8px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  background: var(--light);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(82, 82, 93);
-  padding: 12px 20px;
+  background-color: var(--medium);
+  padding: 0 20px;
+}
+
+.navbar a {
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: inherit;
+  border-bottom: 2px solid transparent;
+  padding: 22px 12px 20px;
+}
+
+.navbar a:hover {
+  border-color: var(--white)
+}
+
+.navbar a.active {
+  border-color: var(--white)
+}
+
+.navbar .navbar_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
+.navbar button {
+  background: transparent;
+  border: 1px solid var(--white);
+}
+
+.navbar button:hover {
+  background: var(--white);
+  color: var(--dark)
 }
 
 h1 {
@@ -77,3 +105,4 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
